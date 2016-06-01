@@ -1,0 +1,94 @@
+
+  <style>
+ 
+/* Add animation to "page content" */
+.animate-bottom {
+  position: relative;
+  -webkit-animation-name: animatebottom;
+  -webkit-animation-duration: 1s;
+  animation-name: animatebottom;
+  animation-duration: 1s
+}
+
+@-webkit-keyframes animatebottom {
+  from { bottom:-100px; opacity:0 } 
+  to { bottom:0px; opacity:1 }
+}
+
+@keyframes animatebottom { 
+  from{ bottom:-100px; opacity:0 } 
+  to{ bottom:0; opacity:1 }
+}
+
+#myDiv {
+  display: none;
+  text-align: left;
+}
+  
+</style>
+
+
+<body onload="ngarkes()" style="margin:0;">
+      <div id="loader"></div>
+      
+        <div style="display:none;" id="myDiv" class="animate-bottom">
+
+
+<div class="container">
+    
+      
+    <h2 class="page-header">Register</h2>
+    
+    {{#if errors}}
+      {{#each errors}}
+        <div class="alert alert-danger">{{msg}}</div>
+      {{/each}}
+    {{/if}}   
+
+<form method="post" action="/users/register">
+   <div class="form-group">
+    <label>Name</label>
+    <input type="text" class="form-control" placeholder="Name" name="name">
+  </div>
+  <div class="form-group">
+    <label>Username</label>
+    <input type="text" class="form-control" placeholder="Username" name="username">
+  </div>
+   <div class="form-group">
+    <label>Email</label>
+    <input type="email" class="form-control" placeholder="Email" name="email">
+  </div>
+  <div class="form-group">
+    <label>Password</label>
+    <input type="password" class="form-control" placeholder="Password" name="password">
+  </div>
+  <div class="form-group">
+    <label>Confirm Password</label>
+    <input type="password" class="form-control" placeholder="Password" name="password2">
+  </div>
+  <button type="submit" class="btn btn-default">Submit</button>
+</form>
+      
+</div>
+    </div> <!-- /container -->
+
+
+
+
+<script>
+  var myVar;
+  
+  function ngarkes()
+    {
+      myVar = setTimeout(showPage, 10);
+    }
+    
+    function showPage()
+    {
+      document.getElementById("loader").style.display ="none";
+      document.getElementById("myDiv").style.display ="block";  
+  }
+    
+  
+</script>
+    </body>
