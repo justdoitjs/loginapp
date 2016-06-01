@@ -80,11 +80,13 @@ app.use(function (req, res, next) {
  app.use('/users', users);
 
 
-app.set('port', (process.env.PORT || 3000));
+app.set('port', (process.env.PORT));
 
 app.listen(app.get('port'), function(){
 	console.log('Server started on port '+app.get('port'));
 });
+
+
 
 // var port = Number(process.enV.PORT || 3000);
 // server.listen(3000);
