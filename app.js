@@ -81,19 +81,10 @@ app.use(function (req, res, next) {
 
 
 // Set Port
- app.set('port', (process.env.PORT || 3000));
-
- app.listen(app.get('port'), function(){
-	// console.log('Server started on port '+app.get('port'));
- });
+ app.set('server_port', (process.env.OPENSHIFT_NODEJS_PORT || 3000));
+ app.set('server_ip_address',(process.env.OPENSHIFT_NODEJS_IP || '127.0.0.1'));
 
 
-// setup ports
-var server_port = process.env.OPENSHIFT_NODEJS_PORT || 3000;
-var server_ip_address = process.env.OPENSHIFT_NODEJS_IP || '127.0.0.1';
-
-
-});
 
 // server listens in on port
 app.listen(server_port, server_ip_address, function () {
