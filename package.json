@@ -16,7 +16,7 @@
     "body-parser": "*",
     "connect-flash": "*",
     "cookie-parser": "^1.4.1",
-    "express": "*",
+    "express": "^4.13.4",
     "express-handlebars": "*",
     "express-messages": "*",
     "express-session": "*",
